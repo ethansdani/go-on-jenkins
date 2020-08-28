@@ -11,16 +11,14 @@ pipeline {
 				echo 'Compiling the source code using maven'
 			}
 		}
-		parallel {
-			stage ('unit-test') {
-				steps {
-					echo 'Performing unit testing'
-				}
+		stage ('unit-test') {
+			steps {
+				echo 'Performing unit testing'
 			}
-			stage ('integration-test') {
-				steps {
-					echo 'Perorming integration testing'
-				}
+		}
+		stage ('integration-test') {
+			steps {
+				echo 'Perorming integration testing'
 			}
 		}
 		stage ('archiving') {
